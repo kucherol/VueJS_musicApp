@@ -48,15 +48,24 @@ export default {
     };
   },
   methods: {
-    login(values) {
+    async login(value) {
       this.log_show_alert = true;
       this.log_in_submission = true;
-      this.log_alert_variant = 'bg_blue-500';
+      this.log_alert_variant = 'bg-blue-500';
       this.log_alert_msg = 'Please wait, your account is being created.';
+
+      try {
+        await this.$store.dispatch('login', value);
+      } catch (error) {
+        this.log_in_submission = false;
+        this.log_alert_variant = 'bg-red-500';
+        this.log_alert_msg = 'Login failed';
+        return;
+      }
 
       this.log_alert_variant = 'bg-green-500';
       this.log_alert_msg = 'Success!!!';
-      console.log(values);
+      window.location.reload();
     },
   },
 };
