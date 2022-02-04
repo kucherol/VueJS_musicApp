@@ -61,7 +61,6 @@
           <div class="font-bold">{{ comment.name }}</div>
           <time>{{ comment.datePosted }}</time>
         </div>
-
         <p>
           {{ comment.content }}
         </p>
@@ -80,7 +79,7 @@ export default {
     return {
       song: {},
       schema: {
-        comments: 'required|min:3',
+        comment: 'required|min:3',
       },
       comment_in_submission: false,
       comment_show_alert: false,
@@ -93,7 +92,7 @@ export default {
   async created() {
     const docSnapshot = await songsCollection.doc(this.$route.params.id).get();
 
-    if (docSnapshot.exists) {
+    if (!docSnapshot.exists) {
       this.$router.push({ name: 'Home' });
       return;
     }
@@ -141,7 +140,7 @@ export default {
 
       this.comments = [];
 
-      snapshots.commentsCollection.forEach((doc) => {
+      snapshots.forEach((doc) => {
         this.comments.push({
           docID: doc.id,
           ...doc.data(),

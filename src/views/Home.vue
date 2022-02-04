@@ -28,7 +28,6 @@
           v-icon.right.yellow="'headphones-alt'">
           <span class="card-title">Songs</span>
           <!-- Icon -->
-
         </div>
         <!-- Playlist -->
         <ol id="playlist">

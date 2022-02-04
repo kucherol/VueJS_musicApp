@@ -29,8 +29,8 @@ export default createStore({
     },
     updatePosition: (state) => {
       state.seek = helper.formatTime(state.sound.seek());
-      state.duration = helper.formatTime(state.duration.duration());
-      state.playerProgress = `${(state.sound.seek() / state.duration.duration()) * 100}%`;
+      state.duration = helper.formatTime(state.sound.duration());
+      state.playerProgress = `${(state.sound.seek() / state.sound.duration()) * 100}%`;
     },
   },
   getters: {
@@ -78,7 +78,7 @@ export default createStore({
     },
     async newSong({ commit, state, dispatch }, payload) {
       if (state.sound instanceof Howl) {
-        state.sound.upload();
+        state.sound.unload();
       }
       commit('newSong', payload);
       state.sound.play();
@@ -108,7 +108,7 @@ export default createStore({
       }
     },
     updateSeek({ state, dispatch }, payload) {
-      if (state.sound.playing) {
+      if (!state.sound.playing) {
         return;
       }
 
