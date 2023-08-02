@@ -1,34 +1,16 @@
-# music
+# Muxic App - Your Personal Music Hub (Vue.js)
+https://music-app-cyan.vercel.app/
 
-## Project setup
-```
-npm install
-```
+Welcome to Muxic App, a delightful pet project that I created using Vue.js, transforming it into a feature-packed music hub where users can store, upload, and enjoy their favorite tunes.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Key features of Muxic App include:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Music Upload & Storage
 
-### Run your unit tests
-```
-npm run test:unit
-```
+- Seamless Music Playback
 
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
+- User Registration & Authentication
 
-### Lints and fixes files
-```
-npm run lint
-```
+- Responsive Design
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Interactive Music Management
