@@ -17,12 +17,18 @@ Key features of Muxic App include:
 
 This project goes over all of the fundamentals of Vue JS including...
 
-Components
-VUEX State Management
-Styling
-Handling Events
-Lists & Keys
-Forms
-HTTP Requests
+- Components
+
+- VUEX State Management
+
+- Styling
+
+- Handling Events
+
+- Lists & Keys
+
+- Forms
+
+- HTTP Requests
 
 This Vue.js project not only reinforces my expertise in the framework but also highlights my proficiency in building robust and user-friendly web applications. 
